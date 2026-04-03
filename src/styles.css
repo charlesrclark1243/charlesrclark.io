@@ -1,0 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  color: var(--mat-sys-primary);
+}
