@@ -10,6 +10,7 @@
   height: 180px;
   border-radius: 50%;
   margin-right: 0.5rem;
+  margin-top: 1rem;
   object-fit: cover;
 }
 
@@ -42,8 +43,13 @@
 }
 
 .hero-card h1 {
-  margin: 0 0 0.25rem;
+  margin: 0 0 1.25rem;
   font-size: 2rem;
+}
+
+/* stack the subtitle lines directly on top of each other */
+.hero-content p {
+  margin: 0;
 }
 
 .subtitle {
