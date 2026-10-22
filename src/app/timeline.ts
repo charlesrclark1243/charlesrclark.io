@@ -117,6 +117,14 @@ export class Timeline implements AfterViewInit, OnDestroy {
       description:
         'Began CS PhD studies and a position as a Graduate Research Assistant in the Boucher Lab at the University of Florida, under the mentorship of Dr. Christina Boucher.',
     },
+    {
+      period: 'October 2026',
+      title: 'Finalized my dissertation committee.'.,
+      organization: 'University of Florida',
+      kind: 'Education',
+      description:
+        'Finalized my dissertation committee, which consists of Dr. Christina Boucher (chair), Dr. Sanjay Ranka, Dr. Alireza Entezari, and Dr. Simone Marini.',
+    }
   ];
 
   ngAfterViewInit(): void {
