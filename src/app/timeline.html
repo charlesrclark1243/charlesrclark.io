@@ -1,0 +1,27 @@
+<main class="timeline-page">
+  <header class="timeline-intro">
+    <p class="eyebrow">ACADEMIC &amp; PROFESSIONAL JOURNEY</p>
+    <h1>My Timeline</h1>
+    <p>From undergraduate study to doctoral research, teaching, and publications.</p>
+  </header>
+
+  <div class="timeline-track" aria-label="Chronological academic and professional milestones">
+    @for (event of events; track $index) {
+      <article class="timeline-item" #milestone>
+        <span class="timeline-dot" aria-hidden="true"></span>
+        <div class="timeline-card">
+          <div class="timeline-card-top">
+            <span class="timeline-period">{{ event.period }}</span>
+            <span class="timeline-kind">{{ event.kind }}</span>
+          </div>
+          <h2>{{ event.title }}</h2>
+          @if (event.organization.trim().toUpperCase() !== 'N/A') {
+            <p class="timeline-organization">{{ event.organization }}</p>
+          }
+          <p class="timeline-description">{{ event.description }}</p>
+        </div>
+      </article>
+    }
+  </div>
+  <p class="timeline-end">The journey continues.</p>
+</main>

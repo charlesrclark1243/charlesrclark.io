@@ -5,3 +5,13 @@ html {
 a {
   color: var(--mat-sys-primary);
 }
+
+/* Smooth page-to-page crossfade (progressive enhancement in supporting browsers). */
+::view-transition-old(root) { animation: 220ms ease-in both page-leave; }
+::view-transition-new(root) { animation: 420ms ease-out both page-enter; }
+@keyframes page-leave { to { opacity: 0; transform: translateY(-8px); } }
+@keyframes page-enter { from { opacity: 0; transform: translateY(12px); } }
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root), ::view-transition-new(root) { animation-duration: .01ms; }
+  html { scroll-behavior: auto; }
+}

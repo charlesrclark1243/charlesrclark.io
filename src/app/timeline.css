@@ -1,0 +1,219 @@
+.timeline-page {
+  max-width: 930px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 1rem;
+}
+
+.timeline-intro { 
+  text-align: center;
+  margin: 0 auto 3.5rem;
+  max-width: 670px;
+}
+
+.timeline-intro h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin: .35rem 0 .85rem;
+  line-height: 1.18;
+}
+
+.timeline-intro p { 
+  line-height: 1.65;
+}
+
+.eyebrow {
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .15em;
+  color: var(--mat-sys-primary);
+}
+
+.timeline-track {
+  position: relative;
+  padding-bottom: 3rem;
+}
+
+.timeline-track::before {
+  content: '';
+  position: absolute;
+  left: 27px;
+  top: 23px;
+  bottom: 0;
+  width: 5px;
+  border-radius: 4px;
+  background: linear-gradient(180deg, #7ea9eb 0%, #3975c5 100%);
+}
+
+.timeline-track::after {
+  content: '';
+  position: absolute;
+  bottom: -7px;
+  left: 29.5px;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 13px solid transparent;
+  border-right: 13px solid transparent;
+  border-top: 22px solid #3975c5;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr);
+  gap: 1.5rem;
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-dot {
+  position: relative;
+  z-index: 1;
+  display: block;
+  box-sizing: border-box;
+  width: 44px;
+  height: 44px;
+  margin: 6px 0 0 7px;
+  border-radius: 50%;
+  background: #dceafa;
+  border: 4px solid #7fa9e6;
+  box-shadow: 0 0 0 4px var(--mat-sys-surface);
+}
+
+.timeline-card {
+  position: relative;
+  padding: 1.3rem 1.6rem;
+  background: #e3edfc;
+  color: #152947;
+  border: 1px solid #c2d6f6;
+  border-radius: 13px;
+  box-shadow: 0 4px 15px rgba(28, 59, 100, .08);
+  min-width: 0;
+}
+
+.timeline-card::before {
+  content: '';
+  position: absolute;
+  top: 23px;
+  right: 100%;
+  width: 24px;
+  height: 4px;
+  background: #7ea9eb;
+  border-radius: 2px;
+}
+
+.timeline-card-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: .5rem 1rem;
+}
+
+.timeline-period {
+  color: #225996;
+  font-weight: 700;
+  font-size: .9rem;
+}
+
+.timeline-kind {
+  font-size: .75rem;
+  color: #476c9e;
+  letter-spacing: .04em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.timeline-card h2 {
+  font-size: clamp(1.05rem, 2.3vw, 1.35rem);
+  margin: .5rem 0 .3rem;
+  line-height: 1.35;
+}
+
+.timeline-organization { 
+  font-size: .96rem;
+  font-weight: 500;
+  margin: 0 0 .75rem;
+}
+
+.timeline-description {
+  margin: 0;
+  font-size: .94rem;
+  line-height: 1.65;
+}
+
+.timeline-end {
+  margin: 2.5rem 0 0 80px;
+  font-size: .92rem;
+  color: var(--mat-sys-on-surface-variant);
+  font-style: italic;}
+
+/* Initially visible for accessibility and SSR; JS adds the pending class on modern browsers. */
+.timeline-will-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  filter: blur(5px);
+}
+
+.timeline-will-reveal.timeline-visible {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+  transition: opacity 540ms ease var(--reveal-delay, 0ms),
+    transform 540ms cubic-bezier(.2, .75, .2, 1) var(--reveal-delay, 0ms),
+    filter 540ms ease var(--reveal-delay, 0ms);
+}
+
+@media (max-width: 600px) {
+  .timeline-page {
+    padding: 2rem 1rem 1rem;
+  }
+
+  .timeline-intro {
+    margin-bottom: 2.5rem;
+  }
+  
+  .timeline-track::before {
+    left: 18px;
+  }
+  
+  .timeline-track::after {
+    left: 20.5px;
+  }
+  
+  .timeline-item {
+    grid-template-columns: 38px minmax(0, 1fr);
+    gap: .8rem;
+    margin-bottom: 2rem;
+  }
+  
+  .timeline-dot {
+    width: 32px;
+    height: 32px;
+    border-width: 3px;
+    margin: 8px 0 0 4px;
+  }
+  
+  .timeline-card {
+    padding: 1.1rem;
+  }
+  
+  .timeline-card::before {
+    width: 13px;
+    top: 23px;
+  }
+  
+  .timeline-end {
+    margin-left: 56px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .timeline-will-reveal, .timeline-will-reveal.timeline-visible {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: none;
+  }
+}
