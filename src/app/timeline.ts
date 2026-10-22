@@ -63,11 +63,11 @@ export class Timeline implements AfterViewInit, OnDestroy {
     },
     {
       period: 'Aug 2022',
-      title: 'Start of Graduate Studies at Georgia Tech',
+      title: "Start of Master's Studies at Georgia Tech",
       organization: 'Georgia Institute of Technology',
       kind: 'Education',
       description:
-        "Began graduate studies as a CS Master's student in the College of Computing at Georgia Tech",
+        "Began graduate studies as a CS Master's student in the College of Computing at Georgia Tech.",
     },
     {
       period: 'May 2024',
