@@ -54,6 +54,8 @@ export class Timeline implements AfterViewInit, OnDestroy {
       kind: 'Education',
       description:
         'Completed undergraduate studies with a 3.91/4.00 GPA, graduating summa cum laude.',
+      image: 'assets/timeline/sbu_grad.jpg',
+      imageAlt: 'A photo of me in my graduation gown after graduating from SUNY Stony Brook.',
     },
     {
       period: 'Summer 2022',
