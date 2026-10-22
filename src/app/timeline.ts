@@ -103,7 +103,7 @@ export class Timeline implements AfterViewInit, OnDestroy {
     },
     {
       period: 'Aug 2025',
-      title: 'Start of PhD Studies at Georgia Tech',
+      title: 'Start of PhD Studies at University of Florida',
       organization: 'University of Florida',
       kind: 'Education',
       description:
@@ -111,7 +111,7 @@ export class Timeline implements AfterViewInit, OnDestroy {
     },
     {
       period: 'October 2026',
-      title: 'Finalized my Dissertation Committee.',
+      title: 'Finalized my Dissertation Committee',
       organization: 'University of Florida',
       kind: 'Education',
       description:
