@@ -39,11 +39,11 @@ export class Timeline implements AfterViewInit, OnDestroy {
     },
     {
       period: 'Summer 2020',
-      title: 'First time as an Undergraduate Teaching Assistant',
+      title: 'First Time as a Teaching Assistant',
       organization: 'SUNY Stony Brook',
       kind: 'Teaching',
       description:
-        'Assisted in teaching a course on Linear Algebra (AMS 210), helping students understand the material and grading assignments.',
+        'Assisted in teaching a course on Linear Algebra (AMS 210), helping students understand the material and grading assignments. Would serve as a teaching assistant for a course in Data Structures (CSE 214) the following summer, teaching recitation sections and holding office hours for students.',
     },
     {
       period: 'May 2022',
