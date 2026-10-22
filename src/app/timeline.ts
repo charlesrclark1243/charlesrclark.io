@@ -83,7 +83,7 @@ export class Timeline implements AfterViewInit, OnDestroy {
       organization: 'Georgia Institute of Technology',
       kind: 'Research',
       description:
-        'Started working as a graduate research assistant in the Human-Augmented Analytics Group (HAAG) under the mentorship of Dr. Breanna D. Shi.',
+        'Started working as a Graduate Researcher in the Human-Augmented Analytics Group (HAAG) under the mentorship of Dr. Breanna D. Shi.',
     },
     {
       period: 'May 2025',
@@ -115,7 +115,7 @@ export class Timeline implements AfterViewInit, OnDestroy {
       organization: 'University of Florida',
       kind: 'Education',
       description:
-        'Began CS PhD studies and a position as a Research Assistant in the Boucher Lab at the University of Florida, researching computational methods to address antimicrobial resistance (AMR).',
+        'Began CS PhD studies and a position as a Graduate Research Assistant in the Boucher Lab at the University of Florida, under the mentorship of Dr. Christina Boucher.',
     },
   ];
 
