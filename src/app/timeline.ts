@@ -86,8 +86,7 @@ export class Timeline implements AfterViewInit, OnDestroy {
       title: 'M.S. in Computer Science (Specialization in ML)',
       organization: 'Georgia Institute of Technology',
       kind: 'Education',
-      description:
-        'Completed graduate studies with a 4.00/4.00 GPA, graduating with a Master of Science in Computer Science (Specialization in Machine Learning).',
+      description: "Completed my Master's studies with a 4.00/4.00 GPA.",
       image: 'assets/timeline/buzz.jpg',
       imageAlt:
         "Me standing next to Buzz (Georgia Tech's mascot) at graduation, wearing a graduation cap and gown.",
