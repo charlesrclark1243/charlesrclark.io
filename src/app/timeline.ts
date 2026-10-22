@@ -16,6 +16,8 @@ interface Milestone {
   organization: string;
   description: string;
   kind: 'Education' | 'Research' | 'Teaching' | 'Publications' | 'Personal';
+  image?: string;
+  imageAlt?: string;
 }
 
 @Component({
@@ -84,6 +86,9 @@ export class Timeline implements AfterViewInit, OnDestroy {
       kind: 'Education',
       description:
         'Completed graduate studies with a 4.00/4.00 GPA, graduating with a Master of Science in Computer Science (Specialization in Machine Learning).',
+      image: 'assets/timeline/buzz.jpg',
+      imageAlt:
+        "Me standing next to Buzz (Georgia Tech's mascot) at graduation, wearing a graduation cap and gown.",
     },
     {
       period: 'May 2025',
@@ -108,6 +113,9 @@ export class Timeline implements AfterViewInit, OnDestroy {
       kind: 'Education',
       description:
         'Began CS PhD studies and a position as a Graduate Research Assistant in the Boucher Lab at the University of Florida, under the mentorship of Dr. Christina Boucher.',
+      image: 'assets/timeline/mala.jpg',
+      imageAlt:
+        'A photo of the main entrance to Malachowsky Hall on UF campus, where the Boucher Lab is located.',
     },
     {
       period: 'October 2026',

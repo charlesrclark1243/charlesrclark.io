@@ -19,6 +19,15 @@
             <p class="timeline-organization">{{ event.organization }}</p>
           }
           <p class="timeline-description">{{ event.description }}</p>
+          @if (event.image) {
+            <figure class="timeline-image">
+              <img
+                [src]="event.image"
+                [alt]="event.imageAlt || event.title"
+                loading="lazy"
+              />
+            </figure>
+          }
         </div>
       </article>
     }

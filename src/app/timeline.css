@@ -165,6 +165,27 @@
     filter 540ms ease var(--reveal-delay, 0ms);
 }
 
+.timeline-image {
+  margin: 1.25rem 0 0;
+  display: flex;
+  justify-content: center;
+}
+
+.timeline-image img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 600px;
+  object-fit: contain;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.timeline-image img:hover {
+  transform: scale(1.025);
+}
+
 @media (max-width: 600px) {
   .timeline-page {
     padding: 2rem 1rem 1rem;
