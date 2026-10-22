@@ -119,12 +119,12 @@ export class Timeline implements AfterViewInit, OnDestroy {
     },
     {
       period: 'October 2026',
-      title: 'Finalized my dissertation committee.'.,
+      title: 'Finalized my Dissertation Committee.',
       organization: 'University of Florida',
       kind: 'Education',
       description:
         'Finalized my dissertation committee, which consists of Dr. Christina Boucher (chair), Dr. Sanjay Ranka, Dr. Alireza Entezari, and Dr. Simone Marini.',
-    }
+    },
   ];
 
   ngAfterViewInit(): void {
