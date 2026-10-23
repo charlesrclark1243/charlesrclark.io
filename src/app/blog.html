@@ -72,7 +72,6 @@
           [class.blog-collapsed]="expandedSlug() !== post.slug"
           [innerHTML]="renderedHtml.get(post.slug)">
         </div>
-        </div>
         <div class="blog-card-footer">
           <button type="button" class="blog-expand-button" [attr.aria-expanded]="expandedSlug() === post.slug"
             [attr.aria-controls]="'blog-content-' + post.slug" (click)="togglePost(post.slug)">
