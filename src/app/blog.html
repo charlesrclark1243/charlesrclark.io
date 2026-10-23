@@ -1,0 +1,111 @@
+<main class="blog-page">
+  <header class="blog-header">
+    <div>
+      <p class="blog-eyebrow">THOUGHTS, INTERESTS, &amp; EVERYTHING IN BETWEEN</p>
+      <h1>Blog</h1>
+    </div>
+    <div class="blog-controls">
+      <button type="button" class="blog-control-button" (click)="filterOpen.set(!filterOpen())"
+        [attr.aria-expanded]="filterOpen()" aria-controls="blog-filter-panel">
+        <span aria-hidden="true">⚲</span> Filter @if (hasFilters()) { <span class="blog-filter-indicator" aria-label="Active filters">●</span> }
+      </button>
+      <label class="blog-sort-label">
+        <span class="visually-hidden">Sort blog posts by date</span>
+        <select class="blog-sort-select" [value]="sort()" (change)="setSort($any($event.target).value)">
+          <option value="newest">Sort: Newest first</option>
+          <option value="oldest">Sort: Oldest first</option>
+        </select>
+      </label>
+    </div>
+  </header>
+
+  @if (filterOpen()) {
+    <section id="blog-filter-panel" class="blog-filter-panel" aria-label="Filter blog posts">
+      <div class="blog-filter-group">
+        <h2>Year</h2>
+        @for (year of years; track year) {
+          <label><input type="checkbox" [checked]="selectedYears().includes(year)" (change)="toggleYear(year)" /> {{ year }}</label>
+        } @empty {
+          <p>No years yet</p>
+        }
+      </div>
+      <div class="blog-filter-group">
+        <h2>Month</h2>
+        @for (month of months; track $index) {
+          <label><input type="checkbox" [checked]="selectedMonths().includes($index + 1)" (change)="toggleMonth($index + 1)" /> {{ month }}</label>
+        }
+      </div>
+      <div class="blog-filter-group">
+        <h2>Category</h2>
+        @for (category of categories; track category) {
+          <label><input type="checkbox" [checked]="selectedCategories().includes(category)" (change)="toggleCategory(category)" /> {{ category }}</label>
+        } @empty {
+          <p>No categories yet</p>
+        }
+      </div>
+      <div class="blog-filter-actions">
+        <button type="button" (click)="clearFilters()" [disabled]="!hasFilters()">Clear filters</button>
+        <button type="button" (click)="filterOpen.set(false)">Done</button>
+      </div>
+    </section>
+  }
+
+  <p class="blog-result-count" aria-live="polite">
+    {{ filteredPosts().length }} {{ filteredPosts().length === 1 ? 'post' : 'posts' }}
+    @if (hasFilters()) { matching your filters }
+  </p>
+
+  <section class="blog-post-list" aria-label="Blog posts">
+    @for (post of visiblePosts(); track post.slug) {
+      <article class="blog-card" [attr.id]="'post-' + post.slug">
+        <div class="blog-card-top">
+          <time [attr.datetime]="post.date">{{ post.dateLabel }}</time>
+          <span class="blog-category">{{ post.category }}</span>
+        </div>
+        <div class="blog-card-summary">
+          <h2>{{ post.title }}</h2>
+        </div>
+
+        <div
+          [attr.id]="'blog-content-' + post.slug"
+          class="blog-post-body blog-post-content"
+          [class.blog-collapsed]="expandedSlug() !== post.slug"
+          [innerHTML]="renderedHtml.get(post.slug)">
+        </div>
+        <div class="blog-card-footer">
+          <button type="button" class="blog-expand-button" [attr.aria-expanded]="expandedSlug() === post.slug"
+            [attr.aria-controls]="'blog-content-' + post.slug" (click)="togglePost(post.slug)">
+            {{ expandedSlug() === post.slug ? 'Show less' : 'Read more' }}
+            <span class="blog-chevron" [class.blog-chevron-up]="expandedSlug() === post.slug" aria-hidden="true">⌄</span>
+          </button>
+        </div>
+      </article>
+    } @empty {
+      <div class="blog-empty">
+        @if (hasFilters()) {
+          <h2>No matching posts</h2>
+          <p>Try changing your filters to see more posts.</p>
+          <button type="button" (click)="clearFilters()">Clear filters</button>
+        } @else {
+          <h2>Coming soon</h2>
+          <p>No posts have been published yet. Check back later!</p>
+        }
+      </div>
+    }
+  </section>
+
+  @if (totalPages() > 1) {
+    <nav class="blog-pagination" aria-label="Blog pages">
+      <button type="button" (click)="goToPage(page() - 1)" [disabled]="page() === 1" aria-label="Previous page">‹</button>
+      @for (item of pageButtons(); track $index) {
+        @if (item === 'ellipsis') {
+          <span class="blog-ellipsis" aria-hidden="true">…</span>
+        } @else {
+          <button type="button" (click)="goToPage(item)" [class.blog-current-page]="item === page()"
+            [attr.aria-current]="item === page() ? 'page' : null" [attr.aria-label]="'Page ' + item">{{ item }}</button>
+        }
+      }
+      <button type="button" (click)="goToPage(page() + 1)" [disabled]="page() === totalPages()" aria-label="Next page">›</button>
+    </nav>
+  }
+</main>

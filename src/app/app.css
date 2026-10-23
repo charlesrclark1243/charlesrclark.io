@@ -20,3 +20,11 @@
   .navbar { min-height: 56px; padding: 0 8px; }
   .navbar a { min-width: auto; padding: 0 10px; font-size: 0.8125rem; }
 }
+
+
+/* Blog navigation adjustments */
+.navbar a[aria-current='page'] { font-weight: 700; text-decoration: underline; text-underline-offset: 5px; }
+@media (max-width: 600px) {
+  .navbar { height: auto; flex-wrap: wrap; justify-content: flex-end; }
+  .navbar a { padding: 0 6px; font-size: .75rem; }
+}

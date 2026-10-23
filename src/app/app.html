@@ -1,13 +1,16 @@
 <!-- Shared navigation; each page owns its own content. -->
 <mat-toolbar color="primary" class="navbar" aria-label="Primary navigation">
   <span class="spacer"></span>
-  @if (isTimeline()) {
+  @if (isTimeline() || isBlog()) {
     <a mat-button routerLink="/">CV</a>
+    <a mat-button routerLink="/timeline" [attr.aria-current]="isTimeline() ? 'page' : null">Timeline</a>
+    <a mat-button routerLink="/blog" [attr.aria-current]="isBlog() ? 'page' : null">Blog</a>
   } @else {
     <a mat-button routerLink="/" fragment="about-education">About</a>
     <a mat-button routerLink="/" fragment="publications">Publications</a>
     <a mat-button routerLink="/" fragment="experience">Experience</a>
     <a mat-button routerLink="/timeline">Timeline</a>
+    <a mat-button routerLink="/blog">Blog</a>
   }
 </mat-toolbar>
 
