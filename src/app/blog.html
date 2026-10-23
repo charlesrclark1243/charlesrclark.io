@@ -64,18 +64,14 @@
         </div>
         <div class="blog-card-summary">
           <h2>{{ post.title }}</h2>
-          @if (expandedSlug() !== post.slug) {
-            <p class="blog-excerpt">{{ post.excerpt }}</p>
-          }
         </div>
-        <div [attr.id]="'blog-content-' + post.slug" class="blog-expanded-shell" [class.blog-expanded]="expandedSlug() === post.slug"
-          [attr.aria-hidden]="expandedSlug() !== post.slug" [attr.inert]="expandedSlug() === post.slug ? null : ''">
-          <div class="blog-expanded-inner">
-            <div
-              class="blog-post-body"
-              [innerHTML]="renderedHtml.get(post.slug)">
-            </div>
-          </div>
+
+        <div
+          [attr.id]="'blog-content-' + post.slug"
+          class="blog-post-body blog-post-content"
+          [class.blog-collapsed]="expandedSlug() !== post.slug"
+          [innerHTML]="renderedHtml.get(post.slug)">
+        </div>
         </div>
         <div class="blog-card-footer">
           <button type="button" class="blog-expand-button" [attr.aria-expanded]="expandedSlug() === post.slug"
