@@ -3,13 +3,14 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import matter from 'gray-matter';
 import { marked } from 'marked';
-
 import markedKatex from 'marked-katex-extension';
 
-marked.use(markedKatex({
-  throwOnError: false,
-  output: 'html',
-}));
+marked.use(
+  markedKatex({
+    throwOnError: false,
+    output: 'html'
+  })
+);
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const contentDir = path.join(root, 'content', 'blog');
