@@ -38,10 +38,13 @@ yarn-error.log
 testem.log
 /typings
 __screenshots__/
+discord
 
 # System files
 .DS_Store
 Thumbs.db
 
-# Miscellaneous
-discord
+# Blog
+BLOG.md
+content/
+public/assets/

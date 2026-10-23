@@ -13,11 +13,13 @@ import { MatButtonModule } from '@angular/material/button';
 export class App {
   private readonly router = inject(Router);
   readonly isTimeline = signal(this.router.url.split('?')[0].startsWith('/timeline'));
+  readonly isBlog = signal(this.router.url.split('?')[0].startsWith('/blog'));
 
   constructor() {
     this.router.events.pipe(takeUntilDestroyed()).subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.isTimeline.set(event.urlAfterRedirects.split('?')[0].startsWith('/timeline'));
+        this.isBlog.set(event.urlAfterRedirects.split('?')[0].startsWith('/blog'));
       }
     });
   }

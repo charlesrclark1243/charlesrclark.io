@@ -21,5 +21,6 @@ describe('App', () => {
     fixture.detectChanges();
     const text = (fixture.nativeElement as HTMLElement).textContent ?? '';
     expect(text).toContain('Timeline');
+    expect(text).toContain('Blog');
   });
 });
