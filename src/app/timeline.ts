@@ -15,7 +15,7 @@ interface Milestone {
   title: string;
   organization: string;
   description: string;
-  kind: 'Education' | 'Research' | 'Teaching' | 'Publications' | 'Personal';
+  kind: 'Education' | 'Career' | 'Teaching' | 'Publications' | 'Conferences' | 'Personal';
   image?: string;
   imageAlt?: string;
 }
@@ -77,7 +77,7 @@ export class Timeline implements AfterViewInit, OnDestroy {
       period: 'May 2024',
       title: 'Start of Graduate Research with the Human-Augmented Analytics Group (HAAG)',
       organization: 'Georgia Institute of Technology',
-      kind: 'Research',
+      kind: 'Career',
       description:
         'Started working as a Graduate Researcher in the Human-Augmented Analytics Group (HAAG) under the mentorship of Dr. Breanna D. Shi.',
     },
@@ -125,6 +125,14 @@ export class Timeline implements AfterViewInit, OnDestroy {
       kind: 'Education',
       description:
         'Finalized my dissertation committee, which consists of Dr. Christina Boucher (chair), Dr. Sanjay Ranka, Dr. Alireza Entezari, and Dr. Simone Marini.',
+    },
+    {
+      period: 'October 2026',
+      title: 'Attended the Phage Across One Health Symposium',
+      organization: 'University of Florida',
+      kind: 'Conferences',
+      description:
+        'Attended the Phage Across One Health Symposium at the University of Florida, which focused on research conducted in the use of bacteriophages to combat antimicrobial resistant infections.',
     },
   ];
 
