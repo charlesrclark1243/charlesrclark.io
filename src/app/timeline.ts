@@ -93,11 +93,11 @@ export class Timeline implements AfterViewInit, OnDestroy {
     },
     {
       period: 'May 2025',
-      title: 'Start work as a Teaching Assistant for HAAG',
+      title: 'Start work as Head Grader for HAAG',
       organization: 'Georgia Institute of Technology',
       kind: 'Teaching',
       description:
-        'Started working as a teaching assistant for the Human-Augmented Analytics Group (HAAG), assisting in running their CS 8903/6999 course offerings.',
+        'Started working as Head Grader for the Human-Augmented Analytics Group (HAAG), assisting in running their OMSCS CS 8903/6999 course offerings.',
     },
     {
       period: 'July 2025',
@@ -117,6 +117,14 @@ export class Timeline implements AfterViewInit, OnDestroy {
       image: 'assets/timeline/mala.jpg',
       imageAlt:
         'A photo of the main entrance to Malachowsky Hall on UF campus, where the Boucher Lab is located.',
+    },
+    {
+      period: 'Jan 2026',
+      title: 'Promoted to Head Instructional Associate for HAAG',
+      organization: 'Georgia Institute of Technology',
+      kind: 'Teaching',
+      description:
+        "Became Head Instructional Associate for HAAG's OMSCS CS 8903/6999 course offerings, mentoring 150+ graduate researchers across 20+ projects and co-running course operations.",
     },
     {
       period: 'October 2026',
